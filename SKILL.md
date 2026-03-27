@@ -1,10 +1,10 @@
 ---
 name: google-merchant-optimizer
 description: |
-  Optimize Google Merchant Center feed files for maximum SEO performance and Google compliance.
-  Use this skill whenever you need to: enhance product titles and descriptions with high-volume keywords,
-  auto-classify products using Google Product Taxonomy, structure product variations with item_group_id,
-  add product highlights and structured details,
+  Optimize Google Merchant Center feed files for maximum SEO performance and Google compliance
+  across any product category. Use this skill whenever you need to: enhance product titles and
+  descriptions with high-volume keywords, auto-classify products using Google Product Taxonomy,
+  structure product variations with item_group_id, add product highlights and structured details,
   or ensure brand names and attributes (size, color, material, gender) are properly formatted.
   Input: TSV or CSV feed file (raw or partially optimized).
   Output: SEO-optimized CSV feed ready for Google Merchant Center upload.
@@ -52,6 +52,11 @@ For each category discovered in Step 2:
 - Features: "organic cotton," "breathable," "stretch"
 - Modifiers: "classic," "vintage," "oversized"
 
+**Example: Running Shoes category**
+- Primary: "running shoes," "athletic shoes"
+- Features: "cushioned," "breathable," "lightweight"
+- Modifiers: "performance," "trail," "road"
+
 ### Step 4: Optimize Titles
 
 **Title Structure (Google Best Practice):**
@@ -73,6 +78,9 @@ For each category discovered in Step 2:
 - Input: `XL Organic Cotton T-Shirt`
 - Output: `Patagonia Organic Cotton Womens T-Shirt XL`
 
+- Input: `Cordless Drill`
+- Output: `DeWalt 20V Cordless Drill Compact Lightweight`
+
 ### Step 5: Optimize Descriptions
 
 **Structure:**
@@ -90,7 +98,6 @@ Patagonia Organic Cotton Womens T-Shirt combines sustainable materials with ever
 Made from 100% organic cotton, this classic tee offers breathable, soft-touch fabric perfect
 for casual wear. Features a relaxed fit suitable for most body types and is available in XL
 for comfortable, oversized styling. Ideal for eco-conscious shoppers seeking quality basics.
-GTIN: 123456789012.
 ```
 
 ### Step 6: Add Product Highlights & Product Details
@@ -109,9 +116,9 @@ GTIN: 123456789012.
 
 **Example:**
 ```
-product_highlight: "Melton Estate | Estate-Grown | Premium"
+product_highlight: "Nike | Breathable Mesh | Lightweight"
 
-product_details: "General:Product Type:Wine,Specifications:Size:Bottle 750ml,Shipping:Weight:1 kg,General:Brand:Melton Estate"
+product_details: "General:Product Type:Running Shoe,Specifications:Size:10,Specifications:Color:Blue,General:Brand:Nike"
 ```
 
 ### Step 7: Structure Variations with item_group_id
@@ -128,10 +135,10 @@ For products with multiple variations (sizes, colors):
 
 **Example:**
 ```
-item_group_id     | id              | title                                  | color | size
-T-SHIRT-001       | T-SHIRT-001-BLU | Nike Womens Running Shirt Breathable Blue | Blue  | M
-T-SHIRT-001       | T-SHIRT-001-BL-L| Nike Womens Running Shirt Breathable Blue | Blue  | L
-T-SHIRT-001       | T-SHIRT-001-RED | Nike Womens Running Shirt Breathable Red  | Red   | M
+item_group_id     | id              | title                                    | color | size
+SHOE-001          | SHOE-001-BLU-10 | Nike Mens Air Max Running Shoe Blue      | Blue  | 10
+SHOE-001          | SHOE-001-BLU-11 | Nike Mens Air Max Running Shoe Blue      | Blue  | 11
+SHOE-001          | SHOE-001-RED-10 | Nike Mens Air Max Running Shoe Red       | Red   | 10
 ```
 
 ### Step 8: Ensure GTIN & MPN Fields
